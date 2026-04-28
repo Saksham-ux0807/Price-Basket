@@ -1,0 +1,93 @@
+/* SearchPage layout */
+
+.search-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem 5rem;
+}
+
+/* ── Header ──────────────────────────────────────────────────────────────── */
+
+.search-page__header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.search-page__title {
+  font-size: clamp(1.9rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  padding-bottom: 0.1em;
+  color: #14532d;
+}
+
+.search-page__tagline {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #4b7a55;
+  max-width: 44ch;
+  margin-inline: auto;
+}
+
+/* ── Platform pills ──────────────────────────────────────────────────────── */
+
+.search-page__platforms {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.search-page__platform-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  backdrop-filter: blur(8px);
+}
+
+.search-page__platform-pill--blinkit {
+  background: rgba(248, 203, 70, 0.18);
+  border: 1.5px solid rgba(248, 203, 70, 0.5);
+  color: #92620a;
+}
+
+.search-page__platform-pill--zepto {
+  background: rgba(128, 37, 251, 0.1);
+  border: 1.5px solid rgba(128, 37, 251, 0.35);
+  color: #6b21a8;
+}
+
+.search-page__platform-pill--bigbasket {
+  background: rgba(226, 35, 26, 0.08);
+  border: 1.5px solid rgba(226, 35, 26, 0.3);
+  color: #b91c1c;
+}
+
+/* ── Main content ────────────────────────────────────────────────────────── */
+
+.search-page__main {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.search-page__search-wrapper,
+.search-page__results {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .search-page {
+    padding: 4rem 2rem 6rem;
+  }
+}

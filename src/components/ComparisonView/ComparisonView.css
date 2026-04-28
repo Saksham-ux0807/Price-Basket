@@ -1,0 +1,83 @@
+/* ComparisonView — glassmorphic */
+
+.comparison-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+/* ── Share bar ─────────────────────────────────────────────────────────── */
+
+.comparison-view__share-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.comparison-view__share-btn {
+  padding: 0.5rem 1.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: #16a34a;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(22, 163, 74, 0.3);
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.comparison-view__share-btn:hover,
+.comparison-view__share-btn:focus-visible {
+  background: #15803d;
+  transform: scale(1.03);
+  outline: none;
+}
+
+.comparison-view__share-fallback {
+  font-size: 0.875rem;
+  color: rgba(241, 245, 249, 0.7);
+}
+
+.comparison-view__share-fallback p { margin: 0 0 0.25rem; }
+
+.comparison-view__share-url {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.25rem;
+  font-family: monospace;
+  font-size: 0.8rem;
+  word-break: break-all;
+  user-select: all;
+  cursor: text;
+  color: #e2e8f0;
+}
+
+/* ── No results ────────────────────────────────────────────────────────── */
+
+.comparison-view__no-results {
+  font-size: 1rem;
+  color: #6b7280;
+  text-align: center;
+  padding: 2rem 0;
+  margin: 0;
+}
+
+/* ── Price cards grid ──────────────────────────────────────────────────── */
+
+.comparison-view__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding-top: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .comparison-view__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
