@@ -1,4 +1,3 @@
-import React from 'react';
 import type { Platform, PlatformResult } from '../../types';
 import './PriceCard.css';
 
@@ -48,7 +47,6 @@ type CopyState =
 export function PriceCard({ platform, data, isLoading, isError, isLowestPrice }: PriceCardProps) {
   const meta = PLATFORM_META[platform];
 
-  // Shared card header used in all states
   const CardHeader = () => (
     <header className="price-card__header">
       <div className="price-card__brand">
@@ -65,7 +63,6 @@ export function PriceCard({ platform, data, isLoading, isError, isLowestPrice }:
     </header>
   );
 
-  // --- Loading state ---
   if (isLoading) {
     return (
       <article
@@ -85,7 +82,6 @@ export function PriceCard({ platform, data, isLoading, isError, isLowestPrice }:
     );
   }
 
-  // --- Error state ---
   if (isError) {
     return (
       <article
@@ -99,7 +95,6 @@ export function PriceCard({ platform, data, isLoading, isError, isLowestPrice }:
     );
   }
 
-  // --- Out of stock state ---
   if (data && !data.availability) {
     return (
       <article
@@ -114,7 +109,6 @@ export function PriceCard({ platform, data, isLoading, isError, isLowestPrice }:
     );
   }
 
-  // --- Available state ---
   if (data && data.availability) {
     return (
       <article
@@ -136,7 +130,6 @@ export function PriceCard({ platform, data, isLoading, isError, isLowestPrice }:
         </div>
 
         <div className="price-card__actions">
-          {/* View on Platform link */}
           <a
             href={data.productUrl}
             target="_blank"
