@@ -9,13 +9,16 @@ interface PriceCardProps {
   isLowestPrice: boolean;
 }
 
-const PLATFORM_META: Record<Platform, {
-  displayName: string;
-  tagline: string;
-  deliveryTime: string;
-  deliveryLabel: string;
-  icon: string;
-}> = {
+const PLATFORM_META: Record<
+  Platform,
+  {
+    displayName: string;
+    tagline: string;
+    deliveryTime: string;
+    deliveryLabel: string;
+    icon: string;
+  }
+> = {
   blinkit: {
     displayName: 'Blinkit',
     tagline: 'Grocery in minutes',
@@ -32,19 +35,20 @@ const PLATFORM_META: Record<Platform, {
   },
   bigbasket: {
     displayName: 'BigBasket',
-    tagline: 'India\'s biggest online supermarket',
+    tagline: "India's biggest online supermarket",
     deliveryTime: '2–4 hrs',
     deliveryLabel: 'Scheduled delivery',
     icon: '🛒',
   },
 };
 
-type CopyState =
-  | { status: 'idle' }
-  | { status: 'success' }
-  | { status: 'failure'; url: string };
-
-export function PriceCard({ platform, data, isLoading, isError, isLowestPrice }: PriceCardProps) {
+export function PriceCard({
+  platform,
+  data,
+  isLoading,
+  isError,
+  isLowestPrice,
+}: PriceCardProps) {
   const meta = PLATFORM_META[platform];
 
   const CardHeader = () => (
@@ -90,7 +94,9 @@ export function PriceCard({ platform, data, isLoading, isError, isLowestPrice }:
       >
         <CardHeader />
         <div className="price-card__divider" />
-        <p className="price-card__error-message" role="alert">Price unavailable</p>
+        <p className="price-card__error-message" role="alert">
+          Price unavailable
+        </p>
       </article>
     );
   }
@@ -112,12 +118,12 @@ export function PriceCard({ platform, data, isLoading, isError, isLowestPrice }:
   if (data && data.availability) {
     return (
       <article
-        className={`price-card price-card--${platform}${isLowestPrice ? ' price-card--best-price' : ''}`}
+        className={`price-card price-card--${platform}${
+          isLowestPrice ? ' price-card--best-price' : ''
+        }`}
         aria-label={`${meta.displayName} — ${data.productName} — ${data.displayPrice} — ${meta.deliveryTime}`}
       >
-        {isLowestPrice && (
-          <div className="price-card__best-price-badge">★ Best Price</div>
-        )}
+        {isLowestPrice && <div className="price-card__best-price-badge">★ Best Price</div>}
 
         <CardHeader />
         <div className="price-card__divider" />
