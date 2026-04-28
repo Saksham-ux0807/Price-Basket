@@ -5,7 +5,7 @@
  * Requirements: 1.2, 1.4, 2.1, 2.3, 2.4, 5.2, 5.4, 7.1
  */
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useQueries } from '@tanstack/react-query';
 import { adapters } from '../../adapters/index';
 import { PriceCard } from '../PriceCard';
