@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { getVeggieData, type Recipe } from '../../data/recipes';
 import './RecipesSection.css';
 
